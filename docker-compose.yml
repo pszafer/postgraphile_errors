@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13-alpine
+    command: postgres -c config_file=/etc/postgresql.conf
+    volumes:
+      - demo:/var/lib/postgresql/data
+      - ./my-postgres.conf:/etc/postgresql.conf
+    environment:
+      - POSTGRES_DB=app_public
+    ports:
+      - 5432:5432
+  server:
+    build: ./server
+    ports:
+      - 8081:8081
+    depends_on:
+      - db
+    command: yarn server
+volumes:
+  demo:

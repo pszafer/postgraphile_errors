@@ -1,0 +1,23 @@
+{
+  "name": "postgraphile-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node -r esm index.js"
+  },
+  "private": true,
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphile/pg-pubsub": "^4.9.0",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "graphile-build": "^4.9.0",
+    "graphile-build-pg": "^4.9.0",
+    "graphile-utils": "^4.9.0",
+    "postgraphile": "^4.9.0"
+  }
+}
