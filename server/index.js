@@ -1,8 +1,5 @@
 import express from 'express';
 import { postgraphile } from 'postgraphile';
-import PgOrderByMultiColumnIndexPlugin from './PgOrderByMultiColumnIndexPlugin';
-import PgSimplifyInflectorPlugin from '@graphile-contrib/pg-simplify-inflector';
-import ConnectionFilterPlugin from 'postgraphile-plugin-connection-filter';
 
 const port = process.env.PORT || 8081;
 const postgraphileOptions = {
@@ -14,12 +11,6 @@ const postgraphileOptions = {
     settings['user.lastname'] = '123123123213123';
     return settings;
   },
-  appendPlugins: [
-    PgSimplifyInflectorPlugin,
-    ConnectionFilterPlugin,
-    // PgOrderByRelatedPlugin,
-    PgOrderByMultiColumnIndexPlugin,
-  ],
   graphileBuildOptions: {
     orderByNullsLast: true,
     connectionFilterAllowNullInput: true, // default: false
