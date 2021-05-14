@@ -11,13 +11,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@graphile/pg-pubsub": "^4.9.0",
-    "dotenv": "^8.2.0",
+    "@graphile-contrib/pg-simplify-inflector": "^6.1.0",
+    "@graphile/pg-pubsub": "^4.11.0",
+    "dotenv": "^9.0.2",
     "esm": "^3.2.25",
     "express": "^4.17.1",
-    "graphile-build": "^4.9.0",
-    "graphile-build-pg": "^4.9.0",
-    "graphile-utils": "^4.9.0",
-    "postgraphile": "^4.9.0"
+    "graphile-build": "^4.11.0",
+    "graphile-build-pg": "^4.11.2",
+    "graphile-utils": "^4.11.2",
+    "postgraphile": "^4.11.0",
+    "postgraphile-plugin-connection-filter": "^2.2.1"
   }
 }

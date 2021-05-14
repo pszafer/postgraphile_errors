@@ -9,6 +9,7 @@ services:
       - ./my-postgres.conf:/etc/postgresql.conf
     environment:
       - POSTGRES_DB=app_public
+      - POSTGRES_PASSWORD=postgres
     ports:
       - 5432:5432
   server:
