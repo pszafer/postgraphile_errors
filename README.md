@@ -20,13 +20,15 @@ Open `http://localhost:8081/graphiql` in web browser
 
 Paste in graphiql
 ```
-subscription {
-  listen(topic: "hello") {
-    relatedNodeId
-    relatedNode {
-      nodeId
-      ... on Foo {
+mutation MyMutation {
+  deleteFooById(input: {id: 3}) {
+    fooEdge(orderBy: TEST_HA_DESC) {
+      node {
         id
+        nodeId
+        secondcol
+        testHa
+        thirdcol
         title
       }
     }
@@ -36,5 +38,7 @@ subscription {
 
 and click 'Play' button.
 
-In second terminal run run-subscription.sh.
-You should see that subscription yielded data in browser.
+Error appears:
+```
+"Expected SQL item, instead received '({\n        queryBuilder\n      }) => sql.fragment`(${sql.identifier(proc.namespaceName, proc.name)}(${queryBuilder.getTableAlias()}))`'.",
+```
